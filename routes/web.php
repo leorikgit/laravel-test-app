@@ -17,3 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/pay/','PayOrderController@store');
+
+Route::get('/viewComposer/','ChannelController@index');
+Route::get('post/create', 'PostController@create');
