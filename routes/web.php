@@ -27,3 +27,7 @@ Route::get('post/create', 'PostController@create');
 Route::get('/relationships/OneToOne', 'UserController@index');
 Route::get('/relationships/oneToMany', 'UserController@oneToMany');
 Route::get('/relationships/manyToMany', 'UserController@manyToMany');
+
+Route::get('relationships/pOneToOne', 'UserController@pOneToOne');
+Route::get('relationships/pOneToMany', 'UserController@pOneToMany');
+Route::get('relationships/pManyToMany', 'PostController@pManyToMany');

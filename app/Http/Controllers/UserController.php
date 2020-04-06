@@ -24,4 +24,14 @@ class UserController extends Controller
         $user = User::findOrFail(1);
         dd($user->roles()->get());
     }
+    public function pOneToOne(){
+//        $user = User::findOrFail(1);
+//        $user->image()->create(['name'=>'first user image']);
+        $post = Post::findOrFail(1);
+        $post->image()->create(['name'=>'post image yay']);
+    }
+    public function pOneToMany(){
+        $user = User::first();
+        $user->comments()->create(['name' => 'awsome name from user one more time'] );
+    }
 }
