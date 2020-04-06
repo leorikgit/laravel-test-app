@@ -20,3 +20,10 @@ Route::get('/pay/','PayOrderController@store');
 
 Route::get('/viewComposer/','ChannelController@index');
 Route::get('post/create', 'PostController@create');
+
+
+
+//// RELATIONS ////
+Route::get('/relationships/OneToOne', 'UserController@index');
+Route::get('/relationships/oneToMany', 'UserController@oneToMany');
+Route::get('/relationships/manyToMany', 'UserController@manyToMany');
