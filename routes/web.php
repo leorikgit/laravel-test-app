@@ -1,5 +1,6 @@
 <?php
 
+use App\Postcard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,14 @@ Route::get('/relationships/manyToMany', 'UserController@manyToMany');
 Route::get('relationships/pOneToOne', 'UserController@pOneToOne');
 Route::get('relationships/pOneToMany', 'UserController@pOneToMany');
 Route::get('relationships/pManyToMany', 'PostController@pManyToMany');
+
+//// FACADES ////
+Route::get('/postcard', function(){
+
+    $postcardSendingService = new \App\PostcardSendingService('pl', 4,6);
+    $postcardSendingService->hello('Test message', 'michalwrona.dev@gmail.com');
+});
+
+Route::get('facades', function (){
+   Postcard::hello('message', 'email');
+});
