@@ -8,9 +8,11 @@ use App\Billing\PaymentGatewayContract;
 
 use App\Channel;
 use App\Http\View\Composers\ChannelsComposer;
+use App\Mixins\StrMixins;
 use App\PostcardSendingService;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -49,5 +51,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('Postcard', function($app){
             return new PostcardSendingService('pl', 4,6);
         });
+        Str::macro('partNumber', function($part){
+            return 'AB-'.$part;
+        });
+        Str::mixin(new StrMixins());
     }
 }

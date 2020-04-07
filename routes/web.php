@@ -2,6 +2,7 @@
 
 use App\Postcard;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,11 @@ Route::get('/postcard', function(){
 
 Route::get('facades', function (){
    Postcard::hello('message', 'email');
+});
+
+Route::get('/macro', function(){
+    return Str::partNumber('lala');
+});
+Route::get('/mixins', function(){
+    return Str::prefix('lala'. 'aa');
 });
