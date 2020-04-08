@@ -51,3 +51,5 @@ Route::get('/macro', function(){
 Route::get('/mixins', function(){
     return Str::prefix('lala'. 'aa');
 });
+
+Route::get('/pipeline', 'PostController@pipeline');

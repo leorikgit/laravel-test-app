@@ -6,6 +6,7 @@ use App\Channel;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 
 class PostController extends Controller
 {
@@ -19,5 +20,11 @@ class PostController extends Controller
         //$post->tags()->create(['name'=>'first tag']);
         $tag = Tag::findOrFail(1);
         dd($tag->posts);
+    }
+    public function pipeline(){
+
+        $posts = Post::allPost();
+        
+       return view('post.pipeline', compact('posts'));
     }
 }
