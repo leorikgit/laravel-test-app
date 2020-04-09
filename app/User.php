@@ -51,5 +51,8 @@ class User extends Authenticatable
     public function comments(){
         return $this->morphMany('App\Comment', 'commentable');
     }
+    public function customer(){
+        return $this->hasOne(Customer::class);
+    }
 
 }

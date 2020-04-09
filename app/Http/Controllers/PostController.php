@@ -24,7 +24,7 @@ class PostController extends Controller
     public function pipeline(){
 
         $posts = Post::allPost();
-        
+
        return view('post.pipeline', compact('posts'));
     }
 }

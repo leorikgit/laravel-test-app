@@ -53,3 +53,9 @@ Route::get('/mixins', function(){
 });
 
 Route::get('/pipeline', 'PostController@pipeline');
+
+//// repositories pattern
+Route::get('/customers', 'CustomerController@index');
+Route::get('/customers/{id}', 'CustomerController@show');
+Route::get('/customers/{id}/update', 'CustomerController@update');
+Route::get('/customers/{id}/delete', 'CustomerController@destroy');
